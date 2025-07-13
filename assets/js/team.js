@@ -2,32 +2,35 @@
 const teamData = {
     software: [
         {
-            name: "user.name",
-            role: "Team Lead, Software Engineering M.S.",
+            name: "Jameny_",
+            role: "Team Lead, Placeholder Role",
+            photo: "",
             links: {
                 github: "https://github.com/",
                 portfolio: "https://website.dev"
             }
         },
         {
-            name: "Jane D.",
-            role: "Computer Science B.S.",
+            name: "loaf",
+            role: "Placeholder Role",
+            photo: "",
             links: {
-                github: "https://github.com/janedoe",
-                linkedin: "https://linkedin.com/in/janedoe"
+                github: "https://github.com/",
+                linkedin: "https://linkedin.com/in/"
             }
         },
         {
-            name: "John Doe",
-            role: "Software Developer, Computer Science M.S.",
+            name: "Kat",
+            role: "Placeholder Role",
+            photo: "https://tinyurl.com/2xmzktkt",
             links: {
-                github: "https://github.com/jondoe",
-                linkedin: "https://linkedin.com/in/jondoe"
+                github: "https://github.com/katerib?tab=repositories",
             }
         },
         {
             name: "user1459",
             role: "Computer Vision Engineer",
+            photo: "",
             links: {
                 github: "https://github.com/anonuser",
             }
@@ -35,6 +38,7 @@ const teamData = {
         {
             name: "github.username",
             role: "Computer Science B.S., Systems Engineering M.S.",
+            photo: "",
             links: {
             }
         }
@@ -43,19 +47,22 @@ const teamData = {
         {
             name: "John Doe",
             role: "Team Lead, Mechanical Engineering B.S.",
+            photo: "",
             links: {
                 linkedin: "https://linkedin.com/in/john.doe"
             }
         },
         {
             name: "Jane",
-            role: "Thermal Systems Engineer", 
+            role: "Thermal Systems Engineer",
+            photo: "",
             links: {
             }
         },
         {
             name: "another.user",
             role: "Aerospace Engineering M.S.",
+            photo: "",
             links: {
                 linkedin: "https://linkedin.com/in/user.name"
             }
@@ -63,6 +70,7 @@ const teamData = {
         {
             name: "Jane Doe", 
             role: "Materials Science B.S.",
+            photo: "",
             links: {
                 linkedin: "https://linkedin.com/in/jane.doe"
             }
@@ -70,6 +78,7 @@ const teamData = {
         {
             name: "John D.",
             role: "Structural Engineer",
+            photo: "",
             links: {
                 linkedin: "https://linkedin.com/in/john-doe"
             }
@@ -77,6 +86,7 @@ const teamData = {
         {
             name: "john.doe",
             role: "Manufacturing Engineering Student",
+            photo: "",
             links: {
                 linkedin: "https://linkedin.com/in/john.doe"
             }
@@ -86,6 +96,7 @@ const teamData = {
         {
             name: "John Doe",
             role: "Team Lead, Electrical Engineering B.S., Avionics M.S.",
+            photo: "",
             links: {
                 linkedin: "https://linkedin.com/in/johndoe",
             }
@@ -93,6 +104,7 @@ const teamData = {
         {
             name: "discord.username",
             role: "Avionics Student",
+            photo: "",
             links: {
             }
         }
@@ -100,13 +112,18 @@ const teamData = {
 };
 
 function createMemberCard(member, teamColor) {
-    // for pfp, take initials from name or first letters from username 
-    let initials;
+    // single letter initial logic
+    let initial;
     if (member.name.includes('.')) {
-        initials = member.name.split('.').map(n => n[0]).join('').toUpperCase();
+        initial = member.name.split('.')[0][0].toUpperCase();
     } else {
-        initials = member.name.split(' ').map(n => n[0]).join('').toUpperCase();
+        initial = member.name.split(' ')[0][0].toUpperCase();
     }
+    
+    // photo support with fallback to single letter
+    const avatarContent = member.photo ? 
+        `<img src="${member.photo}" alt="${member.name}" class="team-photo">` :
+        `<span class="text-white fw-bold fs-4">${initial}</span>`;
     
     // check if team lead
     const isTeamLead = member.role.toLowerCase().includes('team lead');
@@ -140,7 +157,7 @@ function createMemberCard(member, teamColor) {
             <div class="card h-100 team-card">
                 <div class="card-body text-center">
                     <div class="team-member-avatar bg-gradient-${teamColor} d-flex align-items-center justify-content-center">
-                        <span class="text-white fw-bold fs-4">${initials}</span>
+                        ${avatarContent}
                     </div>
                     <h5 class="card-title">${member.name}</h5>
                     ${teamLeadBadge}
