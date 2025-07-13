@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - RISE Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="../home.html">
+                <img src="../assets/images/rocket-earth.svg" alt="RISE" class="rocket-icon">
+                RISE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="join.html">Join Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="text-center mb-5">
+                    <h1 class="display-4">Contact Us</h1>
+                    <p class="lead">Get in touch with the team</p>
+                </div>
+
+                <section class="mb-5">
+                    <h2>Send Us a Message</h2>
+                    <p>Have questions about RISE? Want to collaborate? We'd love to hear from you.</p>
+                    
+                    <form action="https://formsubmit.co/your-email@example.com" method="POST">
+                        <input type="hidden" name="_subject" value="RISE Project Contact">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="thank-you.html">
+                        
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="organization" class="form-label">Organization (Optional)</label>
+                            <input type="text" class="form-control" id="organization" name="organization">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <select class="form-select" id="subject" name="subject" required>
+                                <option value="">Choose a topic...</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Partnership">Partnership Opportunity</option>
+                                <option value="Technical Question">Technical Question</option>
+                                <option value="Collaboration">Research Collaboration</option>
+                                <option value="Media/Press">Media/Press</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                    </form>
+                </section>
+
+                <section class="mb-5">
+                    <h2>Other Ways to Connect</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Join Our Community</h5>
+                                    <p class="card-text">Connect with our team and other contributors on Discord.</p>
+                                    <a href="https://discord.gg/rise-project" class="btn btn-primary" target="_blank">
+                                        Discord Community
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Follow Development</h5>
+                                    <p class="card-text">Stay updated on our progress and contribute to the project.</p>
+                                    <a href="#" class="btn btn-outline-primary">
+                                        GitHub Repository
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-5">
+                    <h2>Response Time</h2>
+                    <p>We typically respond to inquiries within 24-48 hours. For urgent technical matters, please join our Discord community for faster communication with the development team.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 RISE Project. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/theme-toggle.js"></script>
+    <script src="../assets/js/space-tech.js"></script>
+</body>
+</html>
