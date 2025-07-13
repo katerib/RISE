@@ -1,5 +1,23 @@
 // team data element, would update with actual info if we want to keep this page
 const teamData = {
+    leadership: [
+        {
+            name: "Project Mentor",
+            role: "Project Mentor",
+            photo: "",
+            links: {
+                linkedin: "https://linkedin.com/in/"
+            }
+        },
+        {
+            name: "Project Lead",
+            role: "Project Lead",
+            photo: "",
+            links: {
+                linkedin: "https://linkedin.com/in/"
+            }
+        }
+    ],
     software: [
         {
             name: "Jameny_",
@@ -171,6 +189,7 @@ function createMemberCard(member, teamColor) {
 
 function renderTeam() {
     const teams = {
+        leadership: { container: 'leadership-team', color: 'info' },
         software: { container: 'software-team', color: 'primary' },
         mechanical: { container: 'mechanical-team', color: 'success' },
         avionics: { container: 'avionics-team', color: 'warning' }
