@@ -460,6 +460,14 @@ footer p {
     color: white;
     margin: 0 auto 1rem;
     border: 2px solid var(--border-primary);
+    overflow: hidden;
+}
+
+.team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 #avionics-team.row {
