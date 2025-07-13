@@ -22,7 +22,7 @@ const teamData = {
         {
             name: "Kat",
             role: "Placeholder Role",
-            photo: "https://tinyurl.com/2xmzktkt",
+            photo: "",
             links: {
                 github: "https://github.com/katerib?tab=repositories",
             }
