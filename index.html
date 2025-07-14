@@ -130,7 +130,13 @@
 
     <footer class="py-4 mt-5">
         <div class="container text-center">
-            <p>&copy; 2025 RISE Project. All rights reserved.</p>
+            <p>
+                &copy;
+                <span id="copyright">
+                    <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+                </span>
+                RISE Project. All rights reserved.
+            </p>
         </div>
     </footer>
 

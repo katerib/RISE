@@ -1,6 +1,6 @@
 # RISE Project Website
 
-Static website for RISE (Recharge Infrastructure for Surface Exploration): autonomous charging infrastructure for Mars drone operations
+Static website for RISE (Recharge Infrastructure for Surface Exploration): autonomous charging infrastructure for Mars drone operations.
 
 ## Tech Stack
 
@@ -19,6 +19,7 @@ python3 -m http.server 8000
 ```
 
 Then open `http://localhost:8000` in your browser.
+Alternatively, use any local server setup like XAMPP, WAMP, or a live-server extension in VSCode or JetBrains IDEs.
 
 ## Key Features
 
@@ -53,17 +54,17 @@ Update the email in `pages/contact.html`:
 ```
 ├── index.html              # Main homepage
 ├── pages/
-│   ├── team.html          # Team showcase
-│   ├── join.html          # Join us page
-│   ├── contact.html       # Contact form
-│   └── thank-you.html     # Form success page
+│   ├── team.html           # Team showcase
+│   ├── join.html           # Join us page
+│   ├── contact.html        # Contact form
+│   └── thank-you.html      # Form success page
 ├── assets/
-│   ├── css/style.css      # Main stylesheet
+│   ├── css/style.css       # Main stylesheet
 │   ├── js/
-│   │   ├── team.js        # Team data and rendering
+│   │   ├── team.js         # Team data and rendering
 │   │   ├── theme-toggle.js # Earth/Mars theme system
-│   │   └── space-tech.js  # Background animations
-│   └── images/            # SVGs and assets
+│   │   └── space-tech.js   # Background animations
+│   └── images/             # SVGs and assets
 └── README.md
 ```
 
