@@ -52,7 +52,8 @@
                     <form action="https://formsubmit.co/5fe59d5489de9593c5ae2498a2d0779b" method="POST">
                         <input type="hidden" name="_subject" value="RISE Project Contact">
                         <input type="hidden" name="_captcha" value="true">
-                        <input type="hidden" name="_next" value="thank-you.html">
+                        <!-- Unfortunately, the thank-you page must be the full URL because FormSubmit gets confused with relative URLs -->
+                        <input type="hidden" name="_next" value="https://katerib.github.io/RISE/pages/thank-you.html">
                         
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
