@@ -1,11 +1,10 @@
-function fmtDate(date) {
+const fmtDate = (date) => {
     return date.toISOString().split('.')[0].replace('T', ' ');
 }
 
-function updateTime() {
+const updateTime = () => {
     const timeDisplays = document.getElementsByClassName('time');
-    const doc = document.documentElement;
-    const isMars = doc.getAttribute('data-theme') === 'mars';
+    const isMars = document.documentElement.getAttribute('data-theme') === 'mars';
 
     const earthDate = new Date();
     const marsDate = new MarsDate(earthDate);
@@ -18,7 +17,7 @@ function updateTime() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     updateTime();
     setInterval(updateTime, 1000);
 });
