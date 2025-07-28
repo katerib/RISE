@@ -13,7 +13,7 @@ function updateTime() {
     const marsDateFmt = fmtDate(marsDate);
 
     for (const timeDisplay of timeDisplays) {
-        timeDisplay.innerHTML = `<b>${isMars ? marsDateFmt : earthDateFmt}</b>`;
+        timeDisplay.textContent = isMars ? marsDateFmt : earthDateFmt;
         timeDisplay.setAttribute('title', isMars ? marsDate.toDateString() : earthDate.toDateString());
     }
 }
