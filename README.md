@@ -71,3 +71,6 @@ Update the email in `pages/contact.html`:
 ## Deployment
 
 Deployed on GitHub Pages. The site automatically updates when changes are pushed to the `deploy` branch.
+
+## Credits
+Mars datetime API from https://github.com/aresastro/marsdatejs.

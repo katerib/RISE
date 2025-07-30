@@ -159,13 +159,13 @@ function createMemberCard(member, teamColor) {
     if (member.links) {
         const linkButtons = [];
         if (member.links.github) {
-            linkButtons.push(`<a href="${member.links.github}" target="_blank" class="btn btn-sm btn-outline-secondary">GitHub</a>`);
+            linkButtons.push(`<a href="${member.links.github}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary">GitHub</a>`);
         }
         if (member.links.linkedin) {
-            linkButtons.push(`<a href="${member.links.linkedin}" target="_blank" class="btn btn-sm btn-outline-secondary">LinkedIn</a>`);
+            linkButtons.push(`<a href="${member.links.linkedin}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary">LinkedIn</a>`);
         }
         if (member.links.portfolio) {
-            linkButtons.push(`<a href="${member.links.portfolio}" target="_blank" class="btn btn-sm btn-outline-secondary">Portfolio</a>`);
+            linkButtons.push(`<a href="${member.links.portfolio}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary">Portfolio</a>`);
         }
         linksHtml = `<div class="d-flex justify-content-center gap-1 flex-wrap mt-3">${linkButtons.join('')}</div>`;
     }

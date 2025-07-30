@@ -61,6 +61,8 @@ class PlanetThemeToggle {
         }
         
         this.updateToggleState(theme);
+
+        updateTime();
         
         // ++ slight delay to ensure DOM is ready
         setTimeout(() => {
