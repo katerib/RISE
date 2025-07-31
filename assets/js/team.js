@@ -2,126 +2,103 @@
 const teamData = {
     leadership: [
         {
-            name: "Project Mentor",
-            role: "Project Mentor",
+            name: "Anthony",
+            role: "Mentor, Aerospace Engineer",
             photo: "",
             links: {
-                linkedin: "https://linkedin.com/in/"
             }
         },
         {
-            name: "Project Lead",
-            role: "Project Lead",
-            photo: "",
+            name: "Ricky Jones",
+            role: "Project Lead, Mechanical/Nuclear/Aerospace Engineering BS, Maintenance Intern, Undergraduate Research Intern",
+            photo: "../assets/images/team/Ricky.png",
             links: {
-                linkedin: "https://linkedin.com/in/"
+                github: "https://github.com/DucksIncoming/",
+                linkedin: "https://www.linkedin.com/in/rickyljones/",
+                portfolio: "https://ricky-jones.com/"
             }
         }
     ],
     software: [
         {
-            name: "Jameny_",
-            role: "Team Lead, Placeholder Role",
-            photo: "",
+            name: "Jenny R.",
+            role: "Team Lead, Computer Science BS",
+            photo: "../assets/images/team/JennyR.jpg",
             links: {
-                github: "https://github.com/",
-                portfolio: "https://website.dev"
+                github: "https://github.com/JLR6",
+                linkedin: "https://www.linkedin.com/in/j-reed-9a5a30229/"
             }
         },
         {
-            name: "loaf",
-            role: "Placeholder Role",
-            photo: "",
+            name: "Abdullah Zubair",
+            role: "Honours BSc in Computer Science",
+            photo: "../assets/images/team/AbdullahZ.jpeg",
             links: {
-                github: "https://github.com/",
-                linkedin: "https://linkedin.com/in/"
+                github: "https://github.com/zahinabrer5",
+                linkedin: "https://linkedin.com/in/zahinabrer"
             }
         },
         {
-            name: "Kat",
-            role: "Placeholder Role",
-            photo: "",
+            name: "Kat B.",
+            role: "Software Engineer, Computer Science BS/MS",
+            photo: "../assets/images/team/Kat.png",
             links: {
-                github: "https://github.com/katerib?tab=repositories",
+                linkedin: "https://www.linkedin.com/in/kateribb/",
+                github: "https://github.com/katerib?tab=repositories"
             }
         },
         {
-            name: "user1459",
-            role: "Computer Vision Engineer",
+            name: "Michael K.",
+            role: "Computer Science BS",
             photo: "",
             links: {
-                github: "https://github.com/anonuser",
             }
         },
-        {
-            name: "github.username",
-            role: "Computer Science B.S., Systems Engineering M.S.",
-            photo: "",
-            links: {
-            }
-        }
     ],
     mechanical: [
         {
-            name: "John Doe",
-            role: "Team Lead, Mechanical Engineering B.S.",
-            photo: "",
-            links: {
-                linkedin: "https://linkedin.com/in/john.doe"
-            }
-        },
-        {
-            name: "Jane",
-            role: "Thermal Systems Engineer",
+            name: "Mechanical Team Lead",
+            role: "Team Lead",
             photo: "",
             links: {
             }
         },
         {
-            name: "another.user",
-            role: "Aerospace Engineering M.S.",
-            photo: "",
+            name: "Katelyn Wong",
+            role: "Mechanical Engineering BS, Mechanical Engineering Intern",
+            photo: "../assets/images/team/KatelynW.jpg",
             links: {
-                linkedin: "https://linkedin.com/in/user.name"
+                linkedin: "https://www.linkedin.com/in/katelynkywong/"
             }
         },
         {
-            name: "Jane Doe", 
-            role: "Materials Science B.S.",
-            photo: "",
+            name: "Abdullah Shariff",
+            role: "",
+            photo: "../assets/images/team/AbdullahS.jpeg",
             links: {
-                linkedin: "https://linkedin.com/in/jane.doe"
+                linkedin: "http://linkedin.com/in/abdullah-shariff"
             }
         },
         {
-            name: "John D.",
-            role: "Structural Engineer",
-            photo: "",
+            name: "Arujith", 
+            role: "Aerospace Engineering BS",
+            photo: "../assets/images/team/Arujith.jpg",
             links: {
-                linkedin: "https://linkedin.com/in/john-doe"
+                linkedin: "https://www.linkedin.com/in/arujith-shimhan-ramasubramanian-8b7031173/"
             }
         },
         {
-            name: "john.doe",
-            role: "Manufacturing Engineering Student",
+            name: "Ezza S.A.",
+            role: "Aerospace Engineering BS",
             photo: "",
             links: {
-                linkedin: "https://linkedin.com/in/john.doe"
             }
         }
     ],
     avionics: [
         {
-            name: "John Doe",
-            role: "Team Lead, Electrical Engineering B.S., Avionics M.S.",
-            photo: "",
-            links: {
-                linkedin: "https://linkedin.com/in/johndoe",
-            }
-        },
-        {
-            name: "discord.username",
-            role: "Avionics Student",
+            name: "Avionics Team Lead",
+            role: "Team Lead",
             photo: "",
             links: {
             }
@@ -143,17 +120,29 @@ function createMemberCard(member, teamColor) {
         `<img src="${member.photo}" alt="${member.name}" class="team-photo">` :
         `<span class="text-white fw-bold fs-4">${initial}</span>`;
     
-    // check if team lead
+    // check for leadership roles
     const isTeamLead = member.role.toLowerCase().includes('team lead');
-    const cleanRole = member.role.replace(/^Team Lead,?\s*/i, '').trim();
+    const isProjectMentor = member.role.toLowerCase().includes('mentor');
+    const isProjectLead = member.role.toLowerCase().includes('project lead');
+    
+    let cleanRole = member.role;
+    if (isTeamLead) cleanRole = cleanRole.replace(/^Team Lead,?\s*/i, '').trim();
+    if (isProjectMentor) cleanRole = cleanRole.replace(/^Mentor,?\s*/i, '').trim();
+    if (isProjectLead) cleanRole = cleanRole.replace(/^Project Lead,?\s*/i, '').trim();
     
     // split multiple roles by comma ; display on separate lines
     const roles = cleanRole.split(',').map(role => role.trim()).filter(role => role.length > 0);
     const roleLines = roles.map(role => `<div class="role-line">${role}</div>`).join('');
     
-    // if team lead, add badge
-    const teamLeadBadge = isTeamLead ? 
-        '<span class="badge team-lead-badge fw-bold mb-2">TEAM LEAD</span>' : '';
+    // add leadership badges
+    let leadershipBadge = '';
+    if (isTeamLead) {
+        leadershipBadge = '<span class="badge team-lead-badge fw-bold mb-2">TEAM LEAD</span>';
+    } else if (isProjectMentor) {
+        leadershipBadge = '<span class="badge team-lead-badge fw-bold mb-2">MENTOR</span>';
+    } else if (isProjectLead) {
+        leadershipBadge = '<span class="badge team-lead-badge fw-bold mb-2">PROJECT LEAD</span>';
+    }
     
     let linksHtml = '';
     if (member.links) {
@@ -174,11 +163,11 @@ function createMemberCard(member, teamColor) {
         <div class="col-md-4 mb-4">
             <div class="card h-100 team-card">
                 <div class="card-body text-center">
-                    <div class="team-member-avatar bg-gradient-${teamColor} d-flex align-items-center justify-content-center">
+                    <div class="team-member-avatar bg-gradient-primary d-flex align-items-center justify-content-center">
                         ${avatarContent}
                     </div>
                     <h5 class="card-title">${member.name}</h5>
-                    ${teamLeadBadge}
+                    ${leadershipBadge}
                     <div class="card-subtitle mb-3">${roleLines}</div>
                     ${linksHtml}
                 </div>
