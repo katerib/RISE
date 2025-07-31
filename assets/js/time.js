@@ -12,7 +12,7 @@ const updateTime = () => {
     const marsDateFmt = fmtDate(marsDate);
 
     for (const timeDisplay of timeDisplays) {
-        timeDisplay.textContent = isMars ? marsDateFmt : earthDateFmt;
+        timeDisplay.textContent = isMars ? marsDateFmt : `${earthDateFmt} UTC`;
         timeDisplay.setAttribute('title', isMars ? marsDate.toDateString() : earthDate.toDateString());
     }
 }
