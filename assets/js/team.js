@@ -9,13 +9,13 @@ const teamData = {
             }
         },
         {
-            name: "Ricky Jones",
+            name: "Marcelle Jones",
             role: "Project Lead, Mechanical/Nuclear/Aerospace Engineering BS, Maintenance Intern, Undergraduate Research Intern",
-            photo: "../assets/images/team/Ricky.png",
+            photo: "../assets/images/team/Marcelle.png",
             links: {
                 github: "https://github.com/DucksIncoming/",
-                linkedin: "https://www.linkedin.com/in/rickyljones/",
-                portfolio: "https://ricky-jones.com/"
+                linkedin: "https://www.linkedin.com/in/marcellejones/",
+                portfolio: "https://marcelle-jones.com/"
             }
         }
     ],
