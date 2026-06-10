@@ -56,8 +56,8 @@ const teamData = {
         },
         {
             name: "Aarav Ramesh",
-            role: "High School",
-            photo: "",
+            role: "",
+            photo: "assets/images/team/Aarav Ramesh.jpg",
             links: {
             }
         },
