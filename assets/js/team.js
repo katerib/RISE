@@ -54,6 +54,13 @@ const teamData = {
             links: {
             }
         },
+        {
+            name: "Aarav Ramesh",
+            role: "",
+            photo: "",
+            links: {
+            }
+        },
     ],
     mechanical: [
         {
