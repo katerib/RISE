@@ -56,7 +56,7 @@ const teamData = {
         },
         {
             name: "Aarav Ramesh",
-            role: "",
+            role: "High School",
             photo: "",
             links: {
             }
