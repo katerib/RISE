@@ -25,7 +25,6 @@ Alternatively, use any local server setup like XAMPP, WAMP, or a live-server ext
 
 - Earth/Mars dual theme toggle
 - Team member management
-- Contact form with FormSubmit integration
 - Background animations
 
 ## Customization
@@ -41,13 +40,6 @@ Update navbar links in each HTML file when adding new pages:
 - `index.html` - main page navbar
 - `pages/team.html` - team page navbar  
 - `pages/join.html` - join page navbar
-- `pages/contact.html` - contact page navbar
-
-### Contact Form
-Update the email in `pages/contact.html`:
-```html
-<form action="https://formsubmit.co/your-email@domain.com" method="POST">
-```
 
 ## Project Structure
 
@@ -55,9 +47,7 @@ Update the email in `pages/contact.html`:
 ├── index.html              # Main homepage
 ├── pages/
 │   ├── team.html           # Team showcase
-│   ├── join.html           # Join us page
-│   ├── contact.html        # Contact form
-│   └── thank-you.html      # Form success page
+│   └── join.html           # Join us page
 ├── assets/
 │   ├── css/style.css       # Main stylesheet
 │   ├── js/
