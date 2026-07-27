@@ -54,6 +54,13 @@ const teamData = {
             links: {
             }
         },
+        {
+            name: "Aarav Ramesh",
+            role: "High School",
+            photo: "",
+            links: {
+            }
+        },
     ],
     mechanical: [
         {
@@ -95,15 +102,6 @@ const teamData = {
             }
         }
     ],
-    avionics: [
-        {
-            name: "Avionics Team Lead",
-            role: "Team Lead",
-            photo: "",
-            links: {
-            }
-        }
-    ]
 };
 
 function createMemberCard(member, teamColor) {
@@ -180,8 +178,7 @@ function renderTeam() {
     const teams = {
         leadership: { container: 'leadership-team', color: 'info' },
         software: { container: 'software-team', color: 'primary' },
-        mechanical: { container: 'mechanical-team', color: 'success' },
-        avionics: { container: 'avionics-team', color: 'warning' }
+        mechanical: { container: 'mechanical-team', color: 'success' }
     };
 
     Object.keys(teams).forEach(teamKey => {
